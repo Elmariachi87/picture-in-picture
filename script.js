@@ -1,11 +1,4 @@
-// if ('pictureInPictureEnabled' in document) {
-//     pipButton.classList.remove('hidden')
-//     pipButton.disabled = false;
 
-//     pipButton.addEventListener('click', () => {
-//         video.requestPictureInPicture();
-//     });
-// }
 // // The Screen Capture API is relatively simple to use. Its sole method is MediaDevices.getDisplayMedia(), whose job is to ask the user to select a screen or portion of a screen to capture in the form of a MediaStream.
 
 // // To start capturing video from the screen, you call getDisplayMedia() on the instance of Media navigator.mediaDevices:
@@ -15,6 +8,8 @@
 
 const videoElement = document.getElementById('video');
 const button = document.getElementById('button');
+const buttonChoose = document.getElementById('button-choose');
+
 
 // Prompt user to select media stream, pass to video element, then play
 
@@ -35,6 +30,8 @@ async function selectMediaStream() {
     }
 }
 
+
+
 button.addEventListener('click', async () => {
     // The line below was just me tinkering to see how I could add an attribute from JS
     // document.getElementById("video").hidden = true;
@@ -48,4 +45,7 @@ button.addEventListener('click', async () => {
 });
 
 // On load
-selectMediaStream();
+
+buttonChoose.addEventListener('click', () => {
+    selectMediaStream();
+});
