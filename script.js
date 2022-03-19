@@ -30,8 +30,6 @@ async function selectMediaStream() {
     }
 }
 
-
-
 button.addEventListener('click', async () => {
     // The line below was just me tinkering to see how I could add an attribute from JS
     // document.getElementById("video").hidden = true;
